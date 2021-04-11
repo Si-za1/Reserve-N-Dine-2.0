@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Item(models.Model):
     name = models.CharField(max_length=50, null=False)
-    price = models.DecimalField(null=False, max_digits=6, decimal_places=2)
+    rate = models.DecimalField(null=False, max_digits=6, decimal_places=2)
     # image = models.ImageField(null=True)
     about_item = models.TextField(null=True)
     category_choices = (
