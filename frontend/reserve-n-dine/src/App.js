@@ -7,6 +7,7 @@ import SignUp from './components/pages/SignUp/SignUp';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/pages/Footer/Footer';
+import Menu from './components/pages/Menu/Menu';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/services' component={Services} />
         <Route path='/products' component={Products} />
         <Route path='/sign-up' component={SignUp} />
+        <Route path='/menu' component={Menu} />
       </Switch>
       <Footer />
     </Router>
