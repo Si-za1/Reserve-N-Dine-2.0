@@ -420,7 +420,7 @@ const Item = ({ item }) => {
         </div>
         <div className="card-content">
           <div className="item-name">{item.item_name}</div>
-          <div className="item-cost">{item.item_cost}</div>
+          <div className="item-cost">Rs. {item.item_cost}</div>
           <button className="add-to-cart-btn">Add to Cart</button>
         </div>
       </div>
