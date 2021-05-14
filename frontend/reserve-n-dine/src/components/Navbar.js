@@ -52,6 +52,11 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
+                            <Link to='/menu' className='nav-links'>
+                                Menu
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link to='/contact' className='nav-links'>
                                 Contact
                             </Link>
@@ -65,6 +70,19 @@ function Navbar() {
                             (
                                 <Link to='/sign-up' className="btn-link">
                                     <Button buttonStyle='btn--outline' buttonSize='btn--mobile'> SIGN UP </Button>
+                                </Link>
+                            )
+                            }
+                        </li>
+                        <li className="nav-btn">
+                            { button ?(
+                                <Link to='/log-in' className="btn-link">
+                                    <Button buttonStyle='btn--outline'> LOG IN </Button>
+                                </Link>
+                            ): 
+                            (
+                                <Link to='/login' className="btn-link">
+                                    <Button buttonStyle='btn--outline' buttonSize='btn--mobile'> LOG IN </Button>
                                 </Link>
                             )
                             }
