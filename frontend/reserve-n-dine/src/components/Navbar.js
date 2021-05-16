@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {Button} from './Button';
 import './Navbar.css';
-import {FaBars, FaTimes, FaKeybase} from 'react-icons/fa';
+import {FaBars, FaTimes, FaKeybase , FaCartPlus} from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib';
 
 function Navbar() {
@@ -61,6 +61,14 @@ function Navbar() {
                                 Contact
                             </Link>
                         </li>
+                        <Link
+                             className='social-icon-link'
+                              to='/cart'
+                              aria-label='Cart'
+                            >
+                        <FaCartPlus/>
+                        </Link>
+                        
                         <li className="nav-btn">
                             { button ?(
                                 <Link to='/sign-up' className="btn-link">
