@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "./Menu.css";
 import {
@@ -22,6 +23,20 @@ import vanilla from "./images/vanilla.jpg";
 
 import lassi from "./images/lassi.JPG";
 import chickensizzler from "./images/chicken-sizzler.jpg";
+import HeroSection from '../../HeroSection';
+import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
+import Pricing from '../../Pricing';
+
+function Menu() {
+  return (
+    <>
+      <HeroSection {...homeObjOne} />
+      <HeroSection {...homeObjThree} />
+    </>
+  );
+}
+
+export default Menu;
 
 const Menu = () => {
   /*===========
@@ -258,6 +273,10 @@ const Menu = () => {
   };
 
   return (
+    <>
+      <HeroSection {...homeObjOne} />
+      <HeroSection {...homeObjThree} />
+    
     <MenuContent>
       <SearchBar />
       <SideNav>
@@ -279,6 +298,7 @@ const Menu = () => {
         {renderMenuItems()}
       </MainContent>
     </MenuContent>
+    </>
   );
 };
 
@@ -427,3 +447,4 @@ const Item = ({ item }) => {
     </>
   );
 };
+

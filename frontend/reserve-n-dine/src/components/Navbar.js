@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {Button} from './Button';
 import './Navbar.css';
-import {FaBars, FaTimes, FaKeybase} from 'react-icons/fa';
+import {FaBars, FaTimes, FaKeybase , FaCartPlus} from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib';
 
 function Navbar() {
@@ -52,10 +52,23 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="nav-item">
+                            <Link to='/menu' className='nav-links'>
+                                Menu
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link to='/contact' className='nav-links'>
                                 Contact
                             </Link>
                         </li>
+                        <Link
+                             className='social-icon-link'
+                              to='/cart'
+                              aria-label='Cart'
+                            >
+                        <FaCartPlus/>
+                        </Link>
+                        
                         <li className="nav-btn">
                             { button ?(
                                 <Link to='/sign-up' className="btn-link">
@@ -65,6 +78,19 @@ function Navbar() {
                             (
                                 <Link to='/sign-up' className="btn-link">
                                     <Button buttonStyle='btn--outline' buttonSize='btn--mobile'> SIGN UP </Button>
+                                </Link>
+                            )
+                            }
+                        </li>
+                        <li className="nav-btn">
+                            { button ?(
+                                <Link to='/log-in' className="btn-link">
+                                    <Button buttonStyle='btn--outline'> LOG IN </Button>
+                                </Link>
+                            ): 
+                            (
+                                <Link to='/login' className="btn-link">
+                                    <Button buttonStyle='btn--outline' buttonSize='btn--mobile'> LOG IN </Button>
                                 </Link>
                             )
                             }
