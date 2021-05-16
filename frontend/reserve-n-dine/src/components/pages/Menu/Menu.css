@@ -28,7 +28,7 @@ Layout
 .menu-content {
   margin: 2rem;
   display: grid;
-  grid-template-columns: minmax(230px, 1fr) 6fr;
+  grid-template-columns: minmax(15rem, 1fr) 6fr;
   grid-template-rows: 3.2rem auto;
   grid-template-areas:
     "menu-sidenav search-bar"
@@ -41,6 +41,9 @@ Layout
   grid-area: search-bar;
   height: 3.2rem;
   margin-left: 10px;
+  position: sticky;
+  /* top: 7rem;
+  left: 19rem; */
 }
 
 .menu-sidenav {
