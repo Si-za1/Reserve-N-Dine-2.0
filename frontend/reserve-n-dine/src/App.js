@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Cart from './components/pages/Cart/Cart';
 import Footer from './components/pages/Footer/Footer';
-import Menu from './components/pages/Menu/Menu';
 
 function App() {
   return (

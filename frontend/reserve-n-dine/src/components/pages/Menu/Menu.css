@@ -241,8 +241,8 @@ Components in items list
   border: none;
   color: var(--blue);
   position: relative;
-  background-color: rgb(209, 137, 3);
-  color: white;
+  /* background-color: rgb(209, 137, 3);
+  color: white; */
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   z-index: 0;
@@ -263,7 +263,7 @@ Components in items list
 }
 
 .add-to-cart-btn:hover::before {
-  transform: scaleX(60);
+  transform: scaleX(55);
 }
 
 .add-to-cart-btn:hover {
