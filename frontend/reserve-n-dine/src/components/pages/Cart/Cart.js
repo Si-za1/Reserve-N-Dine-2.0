@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import HeroSection from "../../HeroSection";
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from "./Data";
 import Pricing from "../../Pricing";
@@ -12,8 +12,40 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import { GrFormAdd, GrFormSubtract, GrPrevious, GrNext } from "react-icons/gr";
 
+// const initialState = [
+//   {
+//     item: {
+//       item_id: 1,
+//       item_name: "Veg Momo",
+//       item_cost: 100,
+//       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
+//       item_img: vegmomo,
+//       category_id: 3,
+//     },
+//     quantity: 2,
+//   },
+//   {
+//     item: {
+//       item_id: 6,
+//       item_name: "Chocolate",
+//       item_cost: 80,
+//       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
+//       item_img: chocolateicecream,
+//       category_id: 7,
+//     },
+//     quantity: 2,
+//   },
+// ]
+
+// const reducer = (state, action) => {
+//   switch(action.type) {
+//     case 'increment':
+      
+//   }
+// }
+
 const Cart = () => {
-  //states
+  
   const [cartItems] = useState([
     {
       item: {
@@ -38,7 +70,9 @@ const Cart = () => {
       quantity: 2,
     },
   ]);
-  //functions
+
+  // const [state, dispatch] = useReducer(reducer, initialState);
+  // const cartItems = state;
 
   return (
     <>
@@ -109,18 +143,18 @@ const CartItem = ({ key, cartItem }) => {
       <td className="div-col cart-item-name">{cartItem.item.item_name}</td>
       <td className="div-col cart-item-price">Rs. {cartItem.item.item_cost}</td>
       <td className="div-col cart-item-qty">
-        <button className="dcr-btn">
+        <button className="dcr-btn" >
           <GrFormSubtract style={{ fontSize: "0.8em" }} />
         </button>
 
         {cartItem.quantity}
-        <button className="incr-btn">
+        <button className="incr-btn" >
           <GrFormAdd style={{ fontSize: "0.8em" }} />
         </button>
       </td>
       <td className="div-col cart-item-total">Rs. 100</td>
       <td className="div-col cart-item-del">
-        <button className="cart-item-del-btn">
+        <button className="cart-item-del-btn" >
           <AiOutlineDelete />
         </button>
       </td>
