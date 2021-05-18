@@ -143,7 +143,7 @@ const CartItem = ({ key, cartItem }) => {
       <td className="div-col cart-item-name">{cartItem.item.item_name}</td>
       <td className="div-col cart-item-price">Rs. {cartItem.item.item_cost}</td>
       <td className="div-col cart-item-qty">
-        <button className="dcr-btn" >
+        <button className="dcr-btn" onClick={increment}>
           <GrFormSubtract style={{ fontSize: "0.8em" }} />
         </button>
 
