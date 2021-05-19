@@ -279,7 +279,7 @@ const Menu = () => {
                 category={category}
                 categories={categories}
                 handleSelectingCategory={onSelectingCategory}
-              ></Category>
+              />
             ))}
         </CategoriesList>
       </SideNav>
