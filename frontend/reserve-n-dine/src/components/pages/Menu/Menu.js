@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link} from "react-router-dom";
 import "./Menu.css";
 import {
   FaSearch,
@@ -25,6 +26,7 @@ import chickensizzler from "./images/chicken-sizzler.jpg";
 import HeroSection from '../../HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 import Pricing from '../../Pricing';
+
 
 
 
@@ -72,7 +74,7 @@ const Menu = () => {
     },
   ]);
 
-  const [items] = useState([
+ const [items] = useState([
     {
       item_id: 1,
       item_name: "Veg Momo",
@@ -171,6 +173,7 @@ const Menu = () => {
       category_id: 7,
     },
   ]);
+  
 
   //other states
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -423,18 +426,30 @@ const Items = (props) => {
 
 const Item = ({ item }) => {
   return (
-    <>
+     <>
+     
+     
       <div className="item-card">
+        
         <div className="img-container">
-          <img src={item.item_img} alt={item.item_name} className="item-img" />
+        <Link to={'/product/' +item.item_id}>
+          <img src={item.item_img} alt={item.item_name} className="item-img" /></Link>
         </div>
         <div className="card-content">
-          <div className="item-name">{item.item_name}</div>
+          <div className="item-name">{item.item_name}
+          
+          </div>
           <div className="item-cost">Rs. {item.item_cost}</div>
           <button className="add-to-cart-btn">Add to Cart</button>
         </div>
       </div>
+      <div>
+        {item.map((item) => (
+          <Item key={item.item_id} {...item} />
+        ))}
+      </div>
     </>
-  );
+   );
 };
+
 

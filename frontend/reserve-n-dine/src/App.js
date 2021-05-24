@@ -11,6 +11,8 @@ import Navbar from './components/Navbar';
 import Cart from './components/pages/Cart/Cart';
 import Footer from './components/pages/Footer/Footer';
 
+
+
 function App() {
   return (
     <Router>
@@ -23,9 +25,11 @@ function App() {
         <Route path='/cart' component={Cart} />
         <Route path='/sign-up' component={SignUp} />
         <Route path='/log-in' component={Login} />
+        
       </Switch>
       <Footer />
     </Router>
+     
   );
 }
 
