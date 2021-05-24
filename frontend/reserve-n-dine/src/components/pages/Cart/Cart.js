@@ -1,44 +1,113 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import HeroSection from "../../HeroSection";
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from "./Data";
 import Pricing from "../../Pricing";
 import "./Cart.css";
-import vegmomo from "../Menu/images/veg-momo.jpg";
-import chocolateicecream from "../Menu/images/chocolate-icecream.jpg";
+import vegmomo from "../../context/images/veg-momo.jpg";
+import chocolateicecream from "../../context/images/chocolate-icecream.jpg";
 
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-
 import { GrFormAdd, GrFormSubtract, GrPrevious, GrNext } from "react-icons/gr";
+import { Link } from "react-router-dom";
+
+// const initialState = [
+//   {
+//     item: {
+//       item_id: 1,
+//       item_name: "Veg Momo",
+//       item_cost: 100,
+//       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
+//       item_img: vegmomo,
+//       category_id: 3,
+//     },
+//     quantity: 2,
+//   },
+//   {
+//     item: {
+//       item_id: 6,
+//       item_name: "Chocolate",
+//       item_cost: 80,
+//       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
+//       item_img: chocolateicecream,
+//       category_id: 7,
+//     },
+//     quantity: 2,
+//   },
+// ]
+
+// const reducer = (state, action) => {
+//   switch(action.type) {
+//     case 'increment':
+
+//   }
+// }
 
 const Cart = () => {
-  //states
-  const [cartItems] = useState([
+  const [cartItems, setCartItems] = useState([
     {
-      item: {
-        item_id: 1,
-        item_name: "Veg Momo",
-        item_cost: 100,
-        item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
-        item_img: vegmomo,
-        category_id: 3,
-      },
+      item_id: 1,
+      item_name: "Veg Momo",
+      item_cost: 100,
+      item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
+      item_img: vegmomo,
+      category_id: 3,
       quantity: 2,
     },
     {
-      item: {
-        item_id: 6,
-        item_name: "Chocolate",
-        item_cost: 80,
-        item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
-        item_img: chocolateicecream,
-        category_id: 7,
-      },
+      item_id: 6,
+      item_name: "Chocolate",
+      item_cost: 80,
+      item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
+      item_img: chocolateicecream,
+      category_id: 7,
       quantity: 2,
     },
   ]);
-  //functions
+
+  //callback functions
+  const handleDecrement = (cartItem) => {
+    const index = cartItems.indexOf(cartItem);
+
+    if (cartItems[index].quantity > 1) {
+      cartItems[index].quantity--;
+    } else {
+      cartItems.splice(index, 1);
+    }
+
+    setCartItems([...cartItems]);
+  };
+
+  const handleIncrement = (cartItem) => {
+    const index = cartItems.indexOf(cartItem);
+
+    cartItems[index].quantity++;
+
+    setCartItems([...cartItems]);
+  };
+
+  const handleDelete = (cartItem) => {
+    const index = cartItems.indexOf(cartItem);
+
+    cartItems.splice(index, 1);
+
+    setCartItems([...cartItems]);
+  };
+
+  const calculateItemTotal = (cartItem) => {
+    const quantity = cartItem.quantity;
+    const rate = cartItem.item_cost;
+    return quantity * parseFloat(rate);
+  };
+
+  const calculateCartTotal = () => {
+    let priceTotal = 0;
+    cartItems.forEach((cartItem) => {
+      priceTotal += calculateItemTotal(cartItem);
+    });
+    return priceTotal;
+  };
 
   return (
     <>
@@ -51,10 +120,17 @@ const Cart = () => {
           <>
             <CartItemsTable>
               {cartItems.map((cartItem, index) => (
-                <CartItem key={index} cartItem={cartItem} />
+                <CartItem
+                  key={index}
+                  cartItem={cartItem}
+                  onIncrement={handleIncrement}
+                  onDecrement={handleDecrement}
+                  onDelete={handleDelete}
+                  itemTotal={calculateItemTotal}
+                />
               ))}
             </CartItemsTable>
-            <CartTotal />
+            <CartTotal cartTotal={calculateCartTotal} />
             <CartButtons />
           </>
         )}
@@ -96,31 +172,32 @@ const CartItemsTable = (props) => {
   );
 };
 
-const CartItem = ({ key, cartItem }) => {
+const CartItem = (props) => {
+  const { cartItem, onIncrement, onDecrement, onDelete, itemTotal } = props;
+  const { item_name, item_cost, item_id, item_img, quantity } = cartItem;
   return (
     <tr className="div-row">
       <td className="div-col cart-item-img-container">
-        <img
-          className="cart-item-img"
-          src={cartItem.item.item_img}
-          alt={cartItem.item.item_name}
-        />
+        <img className="cart-item-img" src={item_img} alt={item_name} />
       </td>
-      <td className="div-col cart-item-name">{cartItem.item.item_name}</td>
-      <td className="div-col cart-item-price">Rs. {cartItem.item.item_cost}</td>
+      <td className="div-col cart-item-name">{item_name}</td>
+      <td className="div-col cart-item-price">Rs. {item_cost}</td>
       <td className="div-col cart-item-qty">
-        <button className="dcr-btn">
+        <button className="dcr-btn" onClick={() => onDecrement(cartItem)}>
           <GrFormSubtract style={{ fontSize: "0.8em" }} />
         </button>
 
-        {cartItem.quantity}
-        <button className="incr-btn">
+        {quantity}
+        <button className="incr-btn" onClick={() => onIncrement(cartItem)}>
           <GrFormAdd style={{ fontSize: "0.8em" }} />
         </button>
       </td>
-      <td className="div-col cart-item-total">Rs. 100</td>
+      <td className="div-col cart-item-total">Rs. {itemTotal(cartItem)}</td>
       <td className="div-col cart-item-del">
-        <button className="cart-item-del-btn">
+        <button
+          className="cart-item-del-btn"
+          onClick={() => onDelete(cartItem)}
+        >
           <AiOutlineDelete />
         </button>
       </td>
@@ -128,11 +205,11 @@ const CartItem = ({ key, cartItem }) => {
   );
 };
 
-const CartTotal = () => {
+const CartTotal = ({ cartTotal }) => {
   return (
     <div className="cart-total">
       <div className="cart-total-header">Total</div>
-      <div className="cart-total-amount">Rs. 300</div>
+      <div className="cart-total-amount">Rs. {cartTotal()}</div>
     </div>
   );
 };
@@ -140,13 +217,18 @@ const CartTotal = () => {
 const CartButtons = () => {
   return (
     <div className="cart-btns">
-      <button className="add-btn">
-        <FaChevronLeft style={{marginRight: "1em", fontSize:"0.8em"}} />
-        Add more items
-      </button>
-      <button className="proceed-btn">
-        Proceed <FaChevronRight style={{marginLeft: "1em", fontSize:"0.8em"}} />
-      </button>
+      <Link to="/menu">
+        <button className="add-btn">
+          <FaChevronLeft style={{ marginRight: "1em", fontSize: "0.8em" }} />
+          Add more items
+        </button>
+      </Link>
+      <Link to="/">
+        <button className="proceed-btn">
+          Proceed
+          <FaChevronRight style={{ marginLeft: "1em", fontSize: "0.8em" }} />
+        </button>
+      </Link>
     </div>
   );
 };
