@@ -3,8 +3,8 @@ import HeroSection from "../../HeroSection";
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from "./Data";
 import Pricing from "../../Pricing";
 import "./Cart.css";
-import vegmomo from "../Menu/images/veg-momo.jpg";
-import chocolateicecream from "../Menu/images/chocolate-icecream.jpg";
+import vegmomo from "../../context/images/veg-momo.jpg";
+import chocolateicecream from "../../context/images/chocolate-icecream.jpg";
 
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
