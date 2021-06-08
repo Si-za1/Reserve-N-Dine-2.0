@@ -5,6 +5,7 @@ import Services from "./components/pages/Services/Services";
 import Products from "./components/pages/Products/Products";
 import Menu from "./components/pages/Menu/Menu";
 import SignUp from "./components/pages/SignUp/SignUp";
+import Register from './components/pages/SignUp/SignUp';
 import Login from "./components/pages/Login/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -12,10 +13,13 @@ import Cart from "./components/pages/Cart/Cart";
 import Footer from "./components/pages/Footer/Footer";
 import ItemDetail from "./components/pages/Menu/ItemDetail";
 import payment from "./components/pages/payment/payment";
+// import Chatbot from "./components/Chatbot";
+
 
 //context for items
 import { ItemsProvider } from "./components/context/ItemsContext";
 import { CartItemsProvider } from "./components/context/CartItemsContext";
+
 
 
 
@@ -52,6 +56,8 @@ function App() {
         <Route path="/sign-up" component={SignUp} />
         <Route path="/log-in" component={Login} />
         <Route path="/payment" component={payment}/>
+        <Route path='/register' component={Register} />
+        {/* <Route path='/Chatbot' component={Chatbot} /> */}
       </Switch>
       <Footer />
     </Router>
