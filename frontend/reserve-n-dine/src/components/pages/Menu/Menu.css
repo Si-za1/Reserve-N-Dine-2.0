@@ -176,7 +176,7 @@ Components in selected category name
 /*=============
 Components in items list
 ==============*/
-.items-list {
+.menu-items-list {
   grid-area: items-list;
   display: flex;
   width: 100%;
@@ -185,7 +185,7 @@ Components in items list
   align-content: space-between;
 }
 
-.item-card {
+.menu-item-card {
   height: fit-content;
   width: 300px;
   margin-bottom: 20px;
@@ -195,15 +195,15 @@ Components in items list
   cursor: pointer;
 }
 
-.item-card:hover {
+.menu-item-card:hover {
   box-shadow: 0 20px 20px -10px rgba(0, 0, 0, 0.2);
 }
 
-.img-container {
+.menu-img-container {
   width: 100%;
 }
 
-.item-img {
+.menu-item-img {
   /* width: 100%; */
   width: 100%;
   height: 15.625rem;
@@ -214,31 +214,32 @@ Components in items list
   border-top-right-radius: 10px;
 }
 
-.card-content {
+.menu-card-content {
   margin: 1rem 0;
   display: grid;
   grid-template-columns: auto 60%;
   grid-template-areas:
     "name name"
     "cost btn";
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
   align-items: baseline;
 }
 
-.item-name {
+.menu-item-name {
   grid-area: name;
   color: var(--blue);
   font-size: 1.2rem;
   font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
-.item-cost {
+.menu-item-cost {
   grid-area: cost;
-  font-size: 1rem;
+  font-size: 1.05rem;
   align-self: center;
 }
 
-.add-to-cart-btn {
+.menu-add-to-cart-btn {
   grid-area: btn;
   padding: 0.5em;
   border: none;
@@ -252,7 +253,7 @@ Components in items list
   /*  inset 0 0 0 3px var(--blue),border-right: 3px solid var(--blue); */
 }
 
-.add-to-cart-btn::before {
+.menu-add-to-cart-btn::before {
   content: "";
   z-index: -1;
   position: absolute;
@@ -265,11 +266,11 @@ Components in items list
   transition: transform 0.25s ease;
 }
 
-.add-to-cart-btn:hover::before {
+.menu-add-to-cart-btn:hover::before {
   transform: scaleX(55);
 }
 
-.add-to-cart-btn:hover {
+.menu-add-to-cart-btn:hover {
   background-color: var(--blue);
   color: white;
   transition: all 0.4s ease-out;

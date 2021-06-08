@@ -303,25 +303,25 @@ const MainContent = (props) => {
 };
 
 const Items = (props) => {
-  return <div className="items-list">{props.children}</div>;
+  return <div className="menu-items-list">{props.children}</div>;
 };
 
 const Item = ({ item }) => {
   return (
     
-      <div className="item-card">
+      <div className="menu-item-card">
         
-        <div className="img-container">
+        <div className="menu-img-container">
         <Link to={`/menu/items/${item.item_id}`} style={{ textDecoration: "none", color:"inherit"}}>
-          <img src={item.item_img} alt={item.item_name} className="item-img" />
+          <img src={item.item_img} alt={item.item_name} className="menu-item-img" />
           </Link>
         </div>
         
-        <div className="card-content">
-          <div className="item-name">{item.item_name}
+        <div className="menu-card-content">
+          <div className="menu-item-name">{item.item_name}
           </div>
-          <div className="item-cost">Rs. {item.item_cost}</div>
-          <button className="add-to-cart-btn">Add to Cart</button>
+          <div className="menu-item-cost">Rs. {item.item_cost}</div>
+          <button className="menu-add-to-cart-btn">Add to Cart</button>
         </div>
       </div>
     

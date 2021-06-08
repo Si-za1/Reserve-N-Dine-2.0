@@ -56,7 +56,6 @@ const Cart = () => {
 
   return (
     <>
-      
       <CartContent>
         <CartHeader />
         {Object.keys(cartItems).length === 0 && <NoCart />}
@@ -160,10 +159,10 @@ const CartTotal = ({ cartTotal }) => {
 
 const CartButtons = () => {
   const [isOpen, setIsOpen] = useState(false);
- 
+
   const togglePopup = () => {
     setIsOpen(!isOpen);
-  }
+  };
   return (
     <div className="cart-btns">
       <Link to="/menu">
@@ -173,22 +172,27 @@ const CartButtons = () => {
         </button>
       </Link>
       <div>
-        <input type ="button" className="proceed-btn" value="Proceed" onClick={togglePopup}     
-         />
-          <FaChevronRight style={{ marginLeft: "1em", fontSize: "0.8em" }}/>
-       
-        {isOpen && <Popup
-      content={<>
-        <b>Payment Options</b>
-        <div className="payment-option">
-        <Link to="/payment"><button className="pay-with-esewa">eSewa</button></Link>
-        <button className="pay-with-cash" >Cash</button>
-        </div>
-      </>}
-      handleClose={togglePopup}
-    />}
-    </div>
-   
+        <button className="proceed-btn" onClick={togglePopup}>
+          Proceed
+          <FaChevronRight style={{ marginLeft: "1em", fontSize: "0.8em" }} />
+        </button>
+        {isOpen && (
+          <Popup
+            content={
+              <>
+                <b>Payment Options</b>
+                <div className="payment-option">
+                  <Link to="/payment">
+                    <button className="pay-with-esewa">eSewa</button>
+                  </Link>
+                  <button className="pay-with-cash">Cash</button>
+                </div>
+              </>
+            }
+            handleClose={togglePopup}
+          />
+        )}
+      </div>
     </div>
   );
 };
