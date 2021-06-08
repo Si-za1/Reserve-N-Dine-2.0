@@ -10,10 +10,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Cart from "./components/pages/Cart/Cart";
 import Footer from "./components/pages/Footer/Footer";
+import ItemDetail from "./components/pages/Menu/ItemDetail";
 
 //context for items
 import { ItemsProvider } from "./components/context/ItemsContext";
-import ItemDetail from "./components/pages/Menu/ItemDetail";
+import { CartItemsProvider } from "./components/context/CartItemsContext";
 
 function App() {
   return (
@@ -24,17 +25,27 @@ function App() {
         <Route path="/services" component={Services} />
         <Route path="/products" component={Products} />
         <Route path="/menu" exact>
-          <ItemsProvider>
-            <Menu />
-          </ItemsProvider>
+          <CartItemsProvider>
+            <ItemsProvider>
+              <Menu />
+            </ItemsProvider>
+          </CartItemsProvider>
         </Route>
         <Route path="/menu/items/:itemId">
           {/* context for items */}
           <ItemsProvider>
-            <ItemDetail />
+            <CartItemsProvider>
+              <ItemDetail />
+            </CartItemsProvider>
           </ItemsProvider>
         </Route>
-        <Route path="/cart" component={Cart} />
+        <Route path="/cart">
+          <ItemsProvider>
+            <CartItemsProvider>
+              <Cart />
+            </CartItemsProvider>
+          </ItemsProvider>
+        </Route>
         <Route path="/sign-up" component={SignUp} />
         <Route path="/log-in" component={Login} />
       </Switch>

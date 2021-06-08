@@ -1,16 +1,15 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+
 import HeroSection from "../../HeroSection";
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from "./Data";
 import Pricing from "../../Pricing";
 import "./Cart.css";
-import vegmomo from "../../context/images/veg-momo.jpg";
-import chocolateicecream from "../../context/images/chocolate-icecream.jpg";
+import { CartItemsContext } from "../../context/CartItemsContext";
 
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
 import { GrFormAdd, GrFormSubtract, GrPrevious, GrNext } from "react-icons/gr";
-import { Link } from "react-router-dom";
 
 // const initialState = [
 //   {
@@ -45,69 +44,14 @@ import { Link } from "react-router-dom";
 // }
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      item_id: 1,
-      item_name: "Veg Momo",
-      item_cost: 100,
-      item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
-      item_img: vegmomo,
-      category_id: 3,
-      quantity: 2,
-    },
-    {
-      item_id: 6,
-      item_name: "Chocolate",
-      item_cost: 80,
-      item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
-      item_img: chocolateicecream,
-      category_id: 7,
-      quantity: 2,
-    },
-  ]);
-
-  //callback functions
-  const handleDecrement = (cartItem) => {
-    const index = cartItems.indexOf(cartItem);
-
-    if (cartItems[index].quantity > 1) {
-      cartItems[index].quantity--;
-    } else {
-      cartItems.splice(index, 1);
-    }
-
-    setCartItems([...cartItems]);
-  };
-
-  const handleIncrement = (cartItem) => {
-    const index = cartItems.indexOf(cartItem);
-
-    cartItems[index].quantity++;
-
-    setCartItems([...cartItems]);
-  };
-
-  const handleDelete = (cartItem) => {
-    const index = cartItems.indexOf(cartItem);
-
-    cartItems.splice(index, 1);
-
-    setCartItems([...cartItems]);
-  };
-
-  const calculateItemTotal = (cartItem) => {
-    const quantity = cartItem.quantity;
-    const rate = cartItem.item_cost;
-    return quantity * parseFloat(rate);
-  };
-
-  const calculateCartTotal = () => {
-    let priceTotal = 0;
-    cartItems.forEach((cartItem) => {
-      priceTotal += calculateItemTotal(cartItem);
-    });
-    return priceTotal;
-  };
+  const {
+    cartItems,
+    handleDecrement,
+    handleIncrement,
+    handleDelete,
+    calculateItemTotal,
+    calculateCartTotal,
+  } = useContext(CartItemsContext);
 
   return (
     <>

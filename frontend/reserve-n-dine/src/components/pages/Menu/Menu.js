@@ -8,6 +8,7 @@ import HeroSection from "../../HeroSection";
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from "./Data";
 import Pricing from "../../Pricing";
 import { ItemsContext } from "../../context/ItemsContext";
+import { CartItemsContext } from "../../context/CartItemsContext";
 
 const Menu = () => {
   /*===========
@@ -54,6 +55,7 @@ const Menu = () => {
   ]);
 
   const items = useContext(ItemsContext);
+  const { cartItems } = useContext(CartItemsContext);
 
   //other states
   const [selectedCategory, setSelectedCategory] = useState({});
@@ -146,9 +148,6 @@ const Menu = () => {
 
   return (
     <>
-      <HeroSection {...homeObjOne} />
-      <HeroSection {...homeObjThree} />
-
       <MenuContent>
         <CartIcon />
 
@@ -308,7 +307,10 @@ const Items = (props) => {
 
 const Item = ({ item }) => {
   return (
-    <Link to={`/menu/items/${item.item_id}`} style={{ textDecoration: "none" }}>
+    <Link
+      to={`/menu/items/${item.item_id}`}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
       <div className="item-card">
         <div className="img-container">
           <img src={item.item_img} alt={item.item_name} className="item-img" />
