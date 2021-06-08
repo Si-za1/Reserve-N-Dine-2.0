@@ -10,6 +10,7 @@ import Pricing from "../../Pricing";
 import { ItemsContext } from "../../context/ItemsContext";
 import { CartItemsContext } from "../../context/CartItemsContext";
 
+
 const Menu = () => {
   /*===========
   States
@@ -307,21 +308,23 @@ const Items = (props) => {
 
 const Item = ({ item }) => {
   return (
-    <Link
-      to={`/menu/items/${item.item_id}`}
-      style={{ textDecoration: "none", color: "inherit" }}
-    >
+    
       <div className="item-card">
+        
         <div className="img-container">
+        <Link to={`/menu/items/${item.item_id}`} style={{ textDecoration: "none", color:"inherit"}}>
           <img src={item.item_img} alt={item.item_name} className="item-img" />
+          </Link>
         </div>
+        
         <div className="card-content">
-          <div className="item-name">{item.item_name}</div>
+          <div className="item-name">{item.item_name}
+          </div>
           <div className="item-cost">Rs. {item.item_cost}</div>
           <button className="add-to-cart-btn">Add to Cart</button>
         </div>
       </div>
-    </Link>
+    
   );
 };
 

@@ -27,6 +27,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: vegmomo,
       category_id: 3,
+      item_description: "veg momo",
     },
     {
       item_id: 2,
@@ -35,6 +36,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: friedbuffmomo,
       category_id: 3,
+      item_description:"fried buff momo",
     },
 
     {
@@ -44,6 +46,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: chickencmomo,
       category_id: 3,
+      item_description:"chicken c momo ",
     },
     {
       item_id: 4,
@@ -52,6 +55,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: lemontea,
       category_id: 6,
+      item_description:"aagati chiya",
     },
     {
       item_id: 5,
@@ -60,6 +64,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: milktea,
       category_id: 6,
+      item_description:"sudha gai ko dudh ko chiya",
     },
     {
       item_id: 6,
@@ -68,6 +73,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: chocolateicecream,
       category_id: 7,
+      item_description:"dairy milk",
     },
     {
       item_id: 7,
@@ -76,6 +82,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: butterscotch,
       category_id: 7,
+      item_description:"best flavour icecream",
     },
     {
       item_id: 8,
@@ -84,6 +91,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: bananalassi,
       category_id: 5,
+      item_description:"made from juju dhau and banana",
     },
     {
       item_id: 9,
@@ -92,6 +100,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: vegchowmein,
       category_id: 4,
+      item_description:"Get the local taste from our veg chowmein" ,
     },
     {
       item_id: 9,
@@ -100,6 +109,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: buffchowmein,
       category_id: 4,
+      item_description:"Get the local taste from our buff chowmein ",
     },
     {
       item_id: 10,
@@ -108,6 +118,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: vanilla,
       category_id: 7,
+      item_description: "Made with the best vanilla extraction",
     },
     {
       item_id: 11,
@@ -116,6 +127,7 @@ export const ItemsProvider = (props) => {
       item_ingredients: "Flour, Potato, Carrot, Cabbage, Garlic",
       item_img: strawberry,
       category_id: 7,
+      item_description: "Made from organic strawberry",
     },
   ]);
 

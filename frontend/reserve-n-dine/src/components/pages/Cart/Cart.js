@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 
 import HeroSection from "../../HeroSection";
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from "./Data";
@@ -10,6 +9,8 @@ import { CartItemsContext } from "../../context/CartItemsContext";
 import { AiOutlineDelete } from "react-icons/ai";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { GrFormAdd, GrFormSubtract, GrPrevious, GrNext } from "react-icons/gr";
+import { Link } from "react-router-dom";
+import Popup from "../payment/Popup";
 
 // const initialState = [
 //   {
@@ -55,8 +56,7 @@ const Cart = () => {
 
   return (
     <>
-      <HeroSection {...homeObjTwo} />
-      <HeroSection {...homeObjThree} />
+      
       <CartContent>
         <CartHeader />
         {Object.keys(cartItems).length === 0 && <NoCart />}
@@ -159,6 +159,11 @@ const CartTotal = ({ cartTotal }) => {
 };
 
 const CartButtons = () => {
+  const [isOpen, setIsOpen] = useState(false);
+ 
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
   return (
     <div className="cart-btns">
       <Link to="/menu">
@@ -167,12 +172,23 @@ const CartButtons = () => {
           Add more items
         </button>
       </Link>
-      <Link to="/">
-        <button className="proceed-btn">
-          Proceed
-          <FaChevronRight style={{ marginLeft: "1em", fontSize: "0.8em" }} />
-        </button>
-      </Link>
+      <div>
+        <input type ="button" className="proceed-btn" value="Proceed" onClick={togglePopup}     
+         />
+          <FaChevronRight style={{ marginLeft: "1em", fontSize: "0.8em" }}/>
+       
+        {isOpen && <Popup
+      content={<>
+        <b>Payment Options</b>
+        <div className="payment-option">
+        <Link to="/payment"><button className="pay-with-esewa">eSewa</button></Link>
+        <button className="pay-with-cash" >Cash</button>
+        </div>
+      </>}
+      handleClose={togglePopup}
+    />}
+    </div>
+   
     </div>
   );
 };

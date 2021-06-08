@@ -11,10 +11,13 @@ import Navbar from "./components/Navbar";
 import Cart from "./components/pages/Cart/Cart";
 import Footer from "./components/pages/Footer/Footer";
 import ItemDetail from "./components/pages/Menu/ItemDetail";
+import payment from "./components/pages/payment/payment";
 
 //context for items
 import { ItemsProvider } from "./components/context/ItemsContext";
 import { CartItemsProvider } from "./components/context/CartItemsContext";
+
+
 
 function App() {
   return (
@@ -48,9 +51,11 @@ function App() {
         </Route>
         <Route path="/sign-up" component={SignUp} />
         <Route path="/log-in" component={Login} />
+        <Route path="/payment" component={payment}/>
       </Switch>
       <Footer />
     </Router>
+     
   );
 }
 

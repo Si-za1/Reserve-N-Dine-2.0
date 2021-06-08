@@ -176,3 +176,22 @@ Small Screen
     text-align: right;
   }
 }
+
+.pay-with-esewa{
+
+  background-color: green;
+  color: white;
+  height: 25px;
+  width: 60px;
+}
+.pay-with-cash{
+  height: 25px;
+  width: 60px;
+
+}
+
+.payment-option{
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
