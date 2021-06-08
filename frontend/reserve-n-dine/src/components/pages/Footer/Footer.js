@@ -7,10 +7,8 @@ import {
   FaInstagram,
   FaKeybase,
   FaYoutube,
-  FaPinterestP
+  FaPinterestP,
 } from 'react-icons/fa';
-
-
 function Footer() {
   return (
     <div className='footer-container'>
