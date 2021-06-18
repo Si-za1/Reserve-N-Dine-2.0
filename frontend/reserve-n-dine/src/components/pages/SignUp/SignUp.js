@@ -28,49 +28,60 @@ function Register() {
   
 
   return (
-      <div className='footer-container1'>
-      <section className='footer-subscription'>
-      <p className='footer-subscription-heading'>
-        Register to our site to get the exclusive membership and recieve many offers and discount
+      <div className='footer-container2'>
+      <section className='footer-subscription2'>
+      <p className='footer-subscription-heading2'>
+        Register to our site to get the exclusive membership!
       </p>
-      <p className='footer-subscription-text'>
-        You can Logout at any time.
-      </p>
-      <div className='input-areas'>
+      <div className='input-areas2'>
         <form>
         <input
-            className='footer-input'
+            className='footer-input2'
             name='name'
             value ={name}
             onchange={(e)=>setName(e.target.value)}
             type='text'
             placeholder='Your Name'
           />
+          <br/>
+          <br/>
           <input
-            className='footer-input'
+            className='footer-input2'
             name='email'
             value ={email}
             onchange={(e)=>setEmail(e.target.value)}
             type='email'
             placeholder='Your Email'
-          />
+          /> 
+          <br/>
+          <br/>
            <input
-            className='footer-input'
+            className='footer-input2'
             name='password'
             value ={password}
             onchange={(e)=>setPassword(e.target.value)}
             type='password'
             placeholder='Your password'
           />
+          <br/>
+          <br/>
            <input
-            className='footer-input'
+            className='footer-input2'
             name='Confirm Password'
             value ={repassword}
             onchange={(e)=>setRepassword(e.target.value)}
             type='password'
             placeholder='Confirm Password'
           />
+          <br/>
+          <br/>
           <Button onclick={SignUp} buttonStyle='btn--outline'>SignUp</Button>
+          <br/>
+          <br/>
+          <p className='footer-subscription-text2'>
+             After signing in, you will be directed to the site!
+          </p>
+
         </form>
       </div>
     </section>

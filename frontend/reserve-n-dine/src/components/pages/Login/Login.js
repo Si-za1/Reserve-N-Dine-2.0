@@ -28,32 +28,36 @@ function Login(){
     }
     return(
         <div className='footer-container1'>
-        <section className='footer-subscription'>
-        <p className='footer-subscription-heading'>
-          Visit our site to get the exclusive membership and recieve many offers and discount
+        <section className='footer-subscription1'>
+        <p className='footer-subscription-heading1'>
+          Welcome!
         </p>
-        <p className='footer-subscription-text'>
-          You can Logout at any time.
-        </p>
-        <div className='input-areas'>
+        <div className='input-areas1'>
           <form>
             <input
-              className='footer-input'
+              className='footer-input1'
               name='email'
               value ={email}
               onchange={(e)=>setEmail(e.target.value)}
               type='email'
               placeholder='Your Email'
-            />
+            /> <hr></hr>
+            <br></br>
              <input
-              className='footer-input'
+              className='footer-input1'
               name='password'
               value ={password}
               onchange={(e)=>setPassword(e.target.value)}
               type='password'
               placeholder='Your password'
-            />
+            /> <hr></hr>
+            <br></br>
             <Button onclick ={login}buttonStyle='btn--outline'>Login </Button>
+            <br></br>
+            <br/>
+            <p className='footer-subscription-text'>
+              You can Logout at any time.
+            </p>
           </form>
         </div>
       </section>

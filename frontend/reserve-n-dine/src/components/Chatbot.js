@@ -40,23 +40,23 @@
 
 
 
- import React from 'react';
-   const mystyle={
-       width: "100%",
-       height: "100%",
-       fontSize:"40px",
-       color:"black",
-       padding:"30px",
-    }
+//  import React from 'react';
+//    const mystyle={
+//        width: "100%",
+//        height: "100%",
+//        fontSize:"40px",
+//        color:"black",
+//        padding:"30px",
+//     }
     
- function Chatbot() {
-    return (
-        <div>
-         <iframe title="chatbot"  src="https://webchat.botframework.com/embed/Siza1?s=YOUR_SECRET_HERE" style={mystyle}>
-         {/* <iframe title="chatbot" src="api://49a128bf-8866-46a3-af0c-ca1f1302b36d/Filesread" >          */}
-        </iframe>
+//  function Chatbot() {
+//     return (
+//         <div>
+//          <iframe title="chatbot"  src="https://webchat.botframework.com/embed/Siza1?s=YOUR_SECRET_HERE" style={mystyle}>
+//          {/* <iframe title="chatbot" src="api://49a128bf-8866-46a3-af0c-ca1f1302b36d/Filesread" >          */}
+//         </iframe>
          
-       </div>
-    )
-}
-export default Chatbot;
+//        </div>
+//     )
+// }
+// export default Chatbot;

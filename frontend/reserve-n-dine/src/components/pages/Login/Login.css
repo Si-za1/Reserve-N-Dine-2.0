@@ -1,39 +1,45 @@
 .footer-container1  {
-    background-color: #1c2237;
+    background-color: #fff;
     padding: 4rem 0 2rem 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;  
+    align-items: center; 
+    padding: 40px;
+    border: 1px solid #1c2237; 
   }
   
-  .footer-subscription{
+  .footer-subscription1{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-bottom: 24px;
-    padding: 24px;
-    color: #fff;
+    border: 1px dashed #1c2237; 
+    padding: 40px;
+    color: #1c2237;
   }
   
-  .footer-subscription > p {
+  .footer-subscription1 > p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
   }
   
-  .footer-subscription-heading{
+  .footer-subscription-heading1{
     margin-bottom: 24px;
-    font-size: 24px;
+    font-size: 40px;
+    font-weight: 400;
+    
   }
   
-  .footer-subscription-text {
+  .footer-subscription-text1 {
     margin-bottom: 24px;
     font-size: 20px;
+    padding: 40px;
   }
   
-  .footer-input{
+  .footer-input1{
     padding: 8px 24px;
     border-radius: 2px;
     margin-right: 10px;
@@ -41,7 +47,7 @@
     border: none;
     font-size: 18px;
     margin-bottom: 16px;
-    border: 1px solid #1c2237;
+    border: 1px solid #fff;
   }
   
   .footer-links {
@@ -70,7 +76,7 @@
   }
   
   .footer-link-items > h2 {
-    color: #fff;
+    color: #1c2237;
   }
   
   .footer-link-items a {
@@ -89,7 +95,7 @@
   }
   
   .footer-input::placeholder {
-    color: #b1b1b1;
+    color: #1c2237;
   }
   
   /* Social Icons */

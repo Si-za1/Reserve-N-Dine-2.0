@@ -4,7 +4,7 @@ import {Button} from './Button';
 import './Navbar.css';
 import {FaBars, FaTimes, FaKeybase , FaCartPlus, FaRobot} from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib';
-import {Chatbot} from './Chatbot';
+
 
 function Navbar() {
     const [click, setClick] = useState(false)
@@ -129,7 +129,7 @@ function Navbar() {
                               to='/Chatbot'
                               aria-label='Chatbot'
                             >
-                                <Button onclick={Chatbot} buttonStyle='btn--outline' buttonSize='btn--mobile'> <FaRobot/></Button>
+                              <FaRobot/>
                        
                         </Link>
                    </ul>
