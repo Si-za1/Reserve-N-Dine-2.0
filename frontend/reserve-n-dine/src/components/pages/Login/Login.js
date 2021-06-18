@@ -1,6 +1,6 @@
 import React , {useState, useEffect}from 'react';
 import {Button} from '../../Button';
-import {useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import './Login.css'
 
 function Login(){
@@ -51,13 +51,17 @@ function Login(){
               type='password'
               placeholder='Your password'
             /> <hr></hr>
+            <br/>
+            <br/>
+             <Link to='/register' className='footer-subscription-text1' >
+              Forgot Password?
+            </Link>
+            <br/>
             <br></br>
             <Button onclick ={login}buttonStyle='btn--outline'>Login </Button>
             <br></br>
             <br/>
-            <p className='footer-subscription-text'>
-              You can Logout at any time.
-            </p>
+           
           </form>
         </div>
       </section>
