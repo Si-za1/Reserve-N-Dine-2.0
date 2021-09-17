@@ -9,6 +9,7 @@ import Register from './components/pages/SignUp/SignUp';
 import Login from './components/pages/Login/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+// import NewComponent from './components/pages/Chatbot/Chatbot';
 import Cart from './components/pages/Cart/Cart';
 import Footer from './components/pages/Footer/Footer';
 
@@ -25,7 +26,7 @@ function App() {
 		  <Route path='/cart' component={Cart} />
 		  <Route path='/register' component={Register} />
 		  <Route path='/log-in' component={Login} />
-		  {/* <Route path='/Chatbot' component={Chatbot} /> */}
+		  {/* { <Route path='/Chatbot' component={NewComponent} /> } */}
 		</Switch>
 		<Footer />
 	  </Router>

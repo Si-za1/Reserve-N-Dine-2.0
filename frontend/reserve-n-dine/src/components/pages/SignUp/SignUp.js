@@ -41,6 +41,7 @@ function Register() {
             value ={name}
             onchange={(e)=>setName(e.target.value)}
             type='text'
+            color='black'
             placeholder='Your Name'
           />
           <br/>
